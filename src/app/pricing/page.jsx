@@ -5,19 +5,19 @@ import { TbRosetteDiscountCheckFilled } from "react-icons/tb";
 const About = () => {
   return (
     <div className="main">
-      <section className="about_banner py-5">
+      <section className="about_banner py-3 py-lg-5">
         <div className="container text-center">
           <h1>Pricing</h1>
         </div>
       </section>
-      <section className="pricing_section mt-5">
+      <section className="pricing_section mt-4 mt-lg-5">
         <div className="container">
           <div className="row row-gap-4">
             <div className="col-md-6 col-xl-4">
               <div className="ps_item">
                 <h3>Silver</h3>
                 <p className='mt-1'>Starting at</p>
-                <div className='my-5'>
+                <div className='my-4 my-lg-5'>
                   <h2>$1,950<span>/year</span></h2>
                   <h5>Annual Subscription</h5>
                 </div>
@@ -34,7 +34,7 @@ const About = () => {
               <div className="ps_item active">
                 <h3>Gold</h3>
                 <p className='mt-1'>Starting at</p>
-                <div className='my-5'>
+                <div className='my-4 my-lg-5'>
                   <h2>$9,950<span>/year</span></h2>
                   <h5>Setup Cost</h5>
                 </div>
@@ -53,7 +53,7 @@ const About = () => {
               <div className="ps_item">
                 <h3>Platinium</h3>
                 <p className='mt-1'>Starting at</p>
-                <div className='my-5'>
+                <div className='my-4 my-lg-5'>
                   <h2>$19,500<span>/year</span></h2>
                   <h5>Annual Subscription</h5>
                 </div>

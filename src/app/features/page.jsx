@@ -7,7 +7,7 @@ import SectionThree from 'src/component/home/SectionThree'
 const About = () => {
   return (
     <div className="main">
-      <section className="about_banner py-5">
+      <section className="about_banner py-3 py-lg-5">
         <div className="container text-center">
           <h1>Features</h1>
         </div>

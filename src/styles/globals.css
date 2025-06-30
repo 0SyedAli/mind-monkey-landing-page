@@ -822,10 +822,11 @@ footer h2 {
 
   div#navbarSupportedContent ul li a {
     color: #fff;
-    font-size: 80px;
+    font-size: 60px;
     text-decoration: none;
     font-family: Gilroy-Black;
-    text-shadow: 2px 3px 5px #ffffffa1
+    text-shadow: 2px 3px 5px #ffffffa1;
+    line-height: 65px;
   }
 
   div#navbarSupportedContent.show {
@@ -1012,6 +1013,40 @@ footer h2 {
     transform: rotate(150deg);
     background-color: #F48A88;
     filter: blur(50.38px);
+  }
+
+  .ps_item ul li {
+    color: #162B60;
+    font-size: 18px;
+    font-family: "ClashDisplay-Medium";
+    line-height: 28px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+  }
+
+  .ps_item h2 {
+    font-size: 51.68px;
+  }
+
+  .Star_theme5 {
+    left: 94%;
+    width: 30px;
+    height: auto;
+  }
+
+  .Star_theme11 {
+    bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+  h2 {
+    font-size: 30px;
+    line-height: 33px;
   }
 }
 

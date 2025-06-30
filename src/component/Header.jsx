@@ -11,12 +11,16 @@ const Header = () => {
     setToggleBtn((e) => (e === '' ? 'active' : ''));
   };
 
+  const handleNavClick = () => {
+    setToggleBtn(''); // Close the navbar-collapse when a link is clicked
+  };
+
   return (
     <div className="container px-0 position-relative">
       <Image src="/images/Star_theme.png" className="Star_theme9" width={36} height={36} alt="hr1" />
 
-      <div className="d-lg-flex align-items-lg-center py-4">
-        <nav className="navbar navbar-expand-lg p-0">
+      <div className="d-lg-flex align-items-lg-center py-lg-4">
+        <nav className="navbar navbar-expand-lg py-3 px-0 p-lg-0">
           <div className="container-fluid">
             <Link href="/" className="navbar-brand">
               <Image
@@ -33,7 +37,7 @@ const Header = () => {
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
-              aria-expanded="false"
+              aria-expanded={toggleBtn === 'active'}
               aria-label="Toggle navigation"
               onClick={toggle}
             >
@@ -45,38 +49,35 @@ const Header = () => {
             </Button>
           </div>
         </nav>
-        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+        <div
+          className={`collapse navbar-collapse ${toggleBtn === 'active' ? 'show' : ''}`}
+          id="navbarSupportedContent"
+        >
           <ul className="navbar-nav ms-lg-auto mb-2 mb-lg-0 gap-lg-4 align-items-lg-center">
             <li className="nav-item">
-              <Link href="/" className="nav-link">Home</Link>
+              <Link href="/" className="nav-link" onClick={handleNavClick}>
+                Home
+              </Link>
             </li>
             <li className="nav-item">
-              <Link href="/about" className="nav-link">About</Link>
+              <Link href="/about" className="nav-link" onClick={handleNavClick}>
+                About
+              </Link>
             </li>
             <li className="nav-item">
-              <Link href="/pricing" className="nav-link">Pricing</Link>
-            </li>
-            {/* <li className="nav-item dropdown">
-                <Link 
-                  href="/mobile-app-development" 
-                  className="nav-link dropdown-toggle" 
-                  role="button" 
-                  data-bs-toggle="dropdown" 
-                  aria-expanded="false"
-                >
-                  Services
-                </Link>
-                <ul className="dropdown-menu">
-                  <li><Link href="/mobile-app-development" className="dropdown-item">Mobile App Development</Link></li>
-                  <li><Link href="/web-development" className="dropdown-item">Web Development</Link></li>
-                  <li><Link href="/ui-ux-design" className="dropdown-item">UI/UX Design</Link></li>
-                </ul>
-              </li> */}
-            <li className="nav-item">
-              <Link href="/features" className="nav-link">Features</Link>
+              <Link href="/pricing" className="nav-link" onClick={handleNavClick}>
+                Pricing
+              </Link>
             </li>
             <li className="nav-item">
-              <button className="btn btn-theme2 px-4">Download</button>
+              <Link href="/features" className="nav-link" onClick={handleNavClick}>
+                Features
+              </Link>
+            </li>
+            <li className="nav-item">
+              <button className="btn btn-theme2 px-4" onClick={handleNavClick}>
+                Download
+              </button>
             </li>
           </ul>
         </div>

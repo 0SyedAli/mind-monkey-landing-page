@@ -5,7 +5,7 @@ import GetStart from 'src/component/home/GetStart'
 const About = () => {
   return (
     <div className="main">
-      <section className="about_banner py-5">
+      <section className="about_banner py-3 py-lg-5">
         <div className="container text-center">
           <h1>About <span>Us</span></h1>
         </div>
