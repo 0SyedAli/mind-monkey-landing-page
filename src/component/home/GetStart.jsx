@@ -1,7 +1,7 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 import { FaApple } from "react-icons/fa";
+import AnimatedSection from "../AnimatedSection";
 
 const GetStart = () => {
     return (
@@ -15,17 +15,27 @@ const GetStart = () => {
                         <Image src="/images/getStart_img.png" className="sgs_bg" width={1090} height={508} alt="get start" />
                         <div className="row align-items-center gap-4 gap-lg-0">
                             <div className="col-lg-6">
-                                <div className="gs_left">
-                                    <h2>ready to get started?</h2>
-                                    <p>Risus habitant leo egestas mauris diam eget morbi tempus vulputate.</p>
-                                    <button className="btn btn-theme3"><span><FaApple /></span> download app</button>
-                                </div>
+                                <AnimatedSection
+                                    direction="left"
+                                    delay={0.2}
+                                >
+                                    <div className="gs_left">
+                                        <h2>ready to get started?</h2>
+                                        <p>Risus habitant leo egestas mauris diam eget morbi tempus vulputate.</p>
+                                        <button className="btn btn-theme3"><span><FaApple /></span> download app</button>
+                                    </div>
+                                </AnimatedSection>
                             </div>
                             <div className="col-lg-6">
-                                <div className="sgs_right position-relative">
-                                    <Image src="/images/shadow_box3.png" className="boxShadow8" width={698} height={698} alt="hr1" />
-                                    <Image src="/images/get_start_img4.png" width={568.73} height={480.6} alt="get start" />
-                                </div>
+                                <AnimatedSection
+                                    zoom="down"
+                                    delay={0.2}
+                                >
+                                    <div className="sgs_right position-relative">
+                                        <Image src="/images/shadow_box3.png" className="boxShadow8" width={698} height={698} alt="hr1" />
+                                        <Image src="/images/get_start_img4.png" width={568.73} height={480.6} alt="get start" />
+                                    </div>
+                                </AnimatedSection>
                             </div>
                         </div>
                     </div>

@@ -624,6 +624,9 @@ img.sgs_bg {
   color: #FFF;
 }
 
+.ps_item_column>div {
+  height: 100%;
+}
 
 .ps_item {
   padding: 30px;
@@ -697,6 +700,16 @@ img.sgs_bg {
   color: #293693;
 }
 
+button .spinner-border {
+  width: 24px;
+  height: 24px;
+}
+
+button:disabled .spinner-border {
+  border: var(--bs-spinner-border-width) solid #FFF;
+  border-right-color: transparent;
+}
+
 /* footer css */
 
 footer {
@@ -710,6 +723,10 @@ footer ul {
 
 footer ul li {
   margin-top: 15px;
+  font-size: 16px;
+  font-family: "ClashDisplay-Medium";
+  line-height: 26px;
+  color: #000;
 }
 
 footer ul li a {

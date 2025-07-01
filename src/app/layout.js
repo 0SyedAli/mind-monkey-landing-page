@@ -7,6 +7,10 @@ import { useEffect, useState } from "react";
 import { Spinner } from "react-bootstrap";
 import Header from "src/component/Header";
 import Footer from "src/component/Footer";
+import NextTopLoader from "nextjs-toploader";
+import SmoothScrollProvider from "src/component/SmoothScrollProvider";
+
+
 
 // Dynamically import BootstrapClients
 const BootstrapClients = dynamic(() =>
@@ -24,7 +28,7 @@ const archivo = Archivo({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-archivo",
-  weight: ["600","700"],
+  weight: ["600", "700"],
 });
 
 const outfit = Outfit({
@@ -69,36 +73,49 @@ export default function RootLayout({ children }) {
       className={`${archivo.variable} ${outfit.variable} ${poppins.variable} ${inter.variable}`}
     >
       <body suppressHydrationWarning={true}>
-        <div style={{ position: "relative", minHeight: "100vh" }}>
-          {!isLoaded && (
-            <div
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                backgroundColor: "trasnparent", // Matches your website's background
-                zIndex: 10,
-              }}
-            >
-              <Spinner animation="border" variant="light" />
+        <NextTopLoader
+          showSpinner={false}
+          color="#293693"
+          easing="ease"
+          speed={500}
+          height={2}
+        />
+        <SmoothScrollProvider>
+          <div id="smooth-wrapper">
+            <div id="smooth-content">
+              <div style={{ position: "relative", minHeight: "100vh" }}>
+                {!isLoaded && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: 0,
+                      width: "100%",
+                      height: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      backgroundColor: "trasnparent", // Matches your website's background
+                      zIndex: 10,
+                    }}
+                  >
+                    <Spinner animation="border" variant="light" />
+                  </div>
+                )}
+                <div
+                  style={{ opacity: isLoaded ? 1 : 0, transition: "opacity 0.3s" }}
+                >
+                  <Header />
+
+                  {children}
+                  <Footer />
+
+                  <BootstrapClients />
+                </div>
+              </div>
             </div>
-          )}
-          <div
-            style={{ opacity: isLoaded ? 1 : 0, transition: "opacity 0.3s" }}
-          >
-            <Header />
-
-            {children}
-            <Footer />
-
-            <BootstrapClients />
           </div>
-        </div>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

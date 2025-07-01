@@ -1,7 +1,10 @@
-"use client";
 import { Suspense, lazy } from "react";
-import Head from "next/head";
-
+import SpinnerLoading from "src/component/SpinnerLoading";
+export const metadata = {
+  title: 'Home | Mind Monkey',
+  description: 'This is home page',
+  keywords: ['nextjs', 'react', 'javascript'],
+}
 // Dynamically import components
 const HeroSection = lazy(() => import("../component/home/HeroSection"));
 const SectionTwo = lazy(() => import("../component/home/SectionTwo"));
@@ -10,37 +13,35 @@ const SectionFour = lazy(() => import("../component/home/SectionFour"));
 const Testimonial = lazy(() => import("../component/home/Testimonial"));
 const Faq = lazy(() => import("../component/home/Faq"));
 const GetStart = lazy(() => import("../component/home/GetStart"));
-const Footer = lazy(() => import("../component/Footer"));
 
 export default function Home() {
   return (
     <div>
-      <Head>
+      {/* <Head>
         <title>My Awesome Home Page</title>
         <link rel="icon" href="/images/favicon.ico" />
-        {/* Add other meta tags or links for stylesheets if necessary */}
         <meta name="description" content="Welcome to my awesome homepage!" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </Head>
-      <Suspense fallback={<div>Loading Hero Section...</div>}>
+      </Head> */}
+      <Suspense fallback={<SpinnerLoading />}>
         <HeroSection />
       </Suspense>
-      <Suspense fallback={<div>Loading Section...</div>}>
+      <Suspense fallback={<SpinnerLoading />}>
         <SectionTwo />
       </Suspense>
-      <Suspense fallback={<div>Loading Section...</div>}>
+      <Suspense fallback={<SpinnerLoading />}>
         <SectionThree />
       </Suspense>
-      <Suspense fallback={<div>Loading Section...</div>}>
+      <Suspense fallback={<SpinnerLoading />}>
         <SectionFour />
       </Suspense>
-      <Suspense fallback={<div>Loading Section...</div>}>
+      <Suspense fallback={<SpinnerLoading />}>
         <Testimonial />
       </Suspense>
-      <Suspense fallback={<div>Loading Section...</div>}>
+      <Suspense fallback={<SpinnerLoading />}>
         <Faq />
       </Suspense>
-      <Suspense fallback={<div>Loading Section...</div>}>
+      <Suspense fallback={<SpinnerLoading />}>
         <GetStart />
       </Suspense>
     </div>

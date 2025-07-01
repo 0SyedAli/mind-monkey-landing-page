@@ -1,6 +1,13 @@
+
 import React from 'react'
 import AboutBanner from 'src/component/about/AboutBanner'
 import GetStart from 'src/component/home/GetStart'
+
+export const metadata = {
+  title: 'About | Mind Monkey',
+  description: 'This is my about page',
+  keywords: ['nextjs', 'react', 'javascript'],
+}
 
 const About = () => {
   return (

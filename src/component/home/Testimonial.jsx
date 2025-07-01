@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Slider from "react-slick";
+import AnimatedSection from "../AnimatedSection";
 
 
 const Testimonial = () => {
@@ -49,60 +50,75 @@ const Testimonial = () => {
                 <Image src="/images/Star_theme.png" className="Star_theme4" width={48} height={48} alt="hr1" />
                 <div className="row text-center mb-5 mb-lg-4">
                     <div className="col-12">
-                        <h5>Testimonial</h5>
-                        <h2>What our users<br /> say about us?</h2>
+                        <AnimatedSection
+                            direction="top"
+                            delay={0.2}
+                        >
+                            <h5>Testimonial</h5>
+                            <h2>What our users<br /> say about us?</h2>
+                        </AnimatedSection>
                     </div>
                 </div>
                 <div className="row align-items-center justify-content-between gap-5 gap-lg-0">
                     <div className="col-md-10 col-lg-6 position-relative">
-                        <Image src="/images/shadow_box.png" className="boxShadow6" width={698} height={698} alt="hr1" />
-                        <Image
-                            src="/images/testimonial.png"
-                            className="hr1_right"
-                            width={698}
-                            height={698}
-                            alt="Testimonial Illustration"
-                        />
+                        <AnimatedSection
+                            zoom="in"
+                            delay={0.2}
+                        >
+                            <Image src="/images/shadow_box.png" className="boxShadow6" width={698} height={698} alt="hr1" />
+                            <Image
+                                src="/images/testimonial.png"
+                                className="hr1_right"
+                                width={698}
+                                height={698}
+                                alt="Testimonial Illustration"
+                            />
+                        </AnimatedSection>
                     </div>
                     <div className="col-lg-5">
-                        <Slider {...settings}>
-                            {testimonials.map((testimonial, index) => (
-                                <div key={index} className="test_item">
-                                    <h3>{testimonial.text}</h3>
-                                    <p>{testimonial.desc}</p>
-                                </div>
-                            ))}
-                        </Slider>
-                        <div className="profile-images mt-3 mb-4">
-                            {testimonials.map((testimonial, index) => (
-                                <div
-                                    key={index}
-                                    className={`profile-wrapper ${currentSlide === index ? "active" : ""
-                                        }`}
-                                    style={{
-                                        display: "inline-block",
-                                        transform:
-                                            currentSlide === index
-                                                ? "scale(1.3)"
-                                                : "scale(1)",
-                                        opacity: currentSlide === index
-                                            ? "1"
-                                            : "0.7",
-                                        transition: "transform 0.3s ease",
-                                    }}
-                                >
-                                    <Image
-                                        src={testimonial.profileImage}
-                                        alt={testimonial.name}
-                                        width={35}
-                                        height={35}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                        <h4 className="current-testimonial-name mt-2">
-                            {testimonials[currentSlide].name}
-                        </h4>
+                        <AnimatedSection
+                            direction="right"
+                            delay={0.2}
+                        >
+                            <Slider {...settings}>
+                                {testimonials.map((testimonial, index) => (
+                                    <div key={index} className="test_item">
+                                        <h3>{testimonial.text}</h3>
+                                        <p>{testimonial.desc}</p>
+                                    </div>
+                                ))}
+                            </Slider>
+                            <div className="profile-images mt-3 mb-4">
+                                {testimonials.map((testimonial, index) => (
+                                    <div
+                                        key={index}
+                                        className={`profile-wrapper ${currentSlide === index ? "active" : ""
+                                            }`}
+                                        style={{
+                                            display: "inline-block",
+                                            transform:
+                                                currentSlide === index
+                                                    ? "scale(1.3)"
+                                                    : "scale(1)",
+                                            opacity: currentSlide === index
+                                                ? "1"
+                                                : "0.7",
+                                            transition: "transform 0.3s ease",
+                                        }}
+                                    >
+                                        <Image
+                                            src={testimonial.profileImage}
+                                            alt={testimonial.name}
+                                            width={35}
+                                            height={35}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                            <h4 className="current-testimonial-name mt-2">
+                                {testimonials[currentSlide].name}
+                            </h4>
+                        </AnimatedSection>
                     </div>
                 </div>
             </div>
