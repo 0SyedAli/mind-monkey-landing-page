@@ -3,14 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/globals.css";
 import dynamic from "next/dynamic";
 import { Archivo, Outfit, Poppins, Inter } from "next/font/google";
-import { useEffect, useState } from "react";
-import { Spinner } from "react-bootstrap";
+import { Suspense, useEffect, useState } from "react";
 import Header from "src/component/Header";
 import Footer from "src/component/Footer";
 import NextTopLoader from "nextjs-toploader";
 import SmoothScrollProvider from "src/component/SmoothScrollProvider";
-
-
+import SpinnerLoading from "src/component/SpinnerLoading";
+import { ThemeProvider } from "src/component/ThemeProvider";
 
 // Dynamically import BootstrapClients
 const BootstrapClients = dynamic(() =>
@@ -49,73 +48,61 @@ export default function RootLayout({ children }) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const handleLoad = () => {
-      setIsLoaded(true);
-    };
-
-    // Listen for the window load event
+    const handleLoad = () => setIsLoaded(true);
     window.addEventListener("load", handleLoad);
 
-    // Simulate content loading (if needed)
-    const timer = setTimeout(() => {
-      setIsLoaded(true); // Remove this if you only rely on the load event
-    }, 0); // Change the delay if simulating content loading
+    const timer = setTimeout(() => setIsLoaded(true), 0);
 
-    // Cleanup event listener and timer
     return () => {
       window.removeEventListener("load", handleLoad);
       clearTimeout(timer);
     };
   }, []);
+
   return (
     <html
       lang="en"
       className={`${archivo.variable} ${outfit.variable} ${poppins.variable} ${inter.variable}`}
     >
       <body suppressHydrationWarning={true}>
-        <NextTopLoader
-          showSpinner={false}
-          color="#293693"
-          easing="ease"
-          speed={500}
-          height={2}
-        />
+        <NextTopLoader showSpinner={false} color="#293693" speed={500} height={2} />
         <SmoothScrollProvider>
-          <div id="smooth-wrapper">
-            <div id="smooth-content">
-              <div style={{ position: "relative", minHeight: "100vh" }}>
-                {!isLoaded && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      backgroundColor: "trasnparent", // Matches your website's background
-                      zIndex: 10,
-                    }}
-                  >
-                    <Spinner animation="border" variant="light" />
+          <ThemeProvider>
+            <div id="smooth-wrapper">
+              <div id="smooth-content">
+                <div style={{ position: "relative", minHeight: "100vh" }}>
+                  <div style={{ opacity: isLoaded ? 1 : 0, transition: "opacity 0.3s" }}>
+                    <Suspense fallback={
+                      <div
+                        style={{
+                          position: "absolute",
+                          top: 0,
+                          left: 0,
+                          width: "100%",
+                          height: "100%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          backgroundColor: "#fff", // or match your background
+                          zIndex: 10,
+                        }}
+                      >
+                        <SpinnerLoading />
+                      </div>
+                    }>
+                      <Header />
+                      {children}
+
+                      <Footer />
+                      <BootstrapClients />
+                    </Suspense>
                   </div>
-                )}
-                <div
-                  style={{ opacity: isLoaded ? 1 : 0, transition: "opacity 0.3s" }}
-                >
-                  <Header />
-
-                  {children}
-                  <Footer />
-
-                  <BootstrapClients />
                 </div>
               </div>
             </div>
-          </div>
+          </ThemeProvider>
         </SmoothScrollProvider>
+
       </body>
     </html>
   );

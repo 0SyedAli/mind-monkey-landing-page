@@ -14,11 +14,11 @@ const SectionTwo = () => {
         <div className="container  position-relative ">
           <div className="row flex-column-reverse flex-lg-row gap-5 gap-lg-0 align-items-center">
             <div className="col-lg-6 position-relative">
+              <Image src="/images/Star_theme.png" className="Star_theme8" width={48} height={48} alt="hr1" />
               <AnimatedSection
                 zoom="out"
                 delay={0.2}
               >
-                <Image src="/images/Star_theme.png" className="Star_theme8" width={48} height={48} alt="hr1" />
                 <Image src="/images/sec2_left.png" className="hr1_right" width={698} height={698} alt="hr1" />
                 <Image src="/images/shadow_box2.png" className="boxShadow2" width={698} height={698} alt="hr1" />
               </AnimatedSection>

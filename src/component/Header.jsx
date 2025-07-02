@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { useState } from "react";
 import Link from "next/link";
 import { HiArrowLongRight } from "react-icons/hi2";
+import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const [toggleBtn, setToggleBtn] = useState('');
@@ -78,6 +79,9 @@ const Header = () => {
               <button className="btn btn-theme2 px-4" onClick={handleNavClick}>
                 Download
               </button>
+            </li>
+            <li className="nav-item">
+              <ThemeToggle />
             </li>
           </ul>
         </div>

@@ -38,6 +38,7 @@ const Testimonial = () => {
     const settings = {
         dots: false,
         infinite: true,
+        arrows: false,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -59,7 +60,7 @@ const Testimonial = () => {
                         </AnimatedSection>
                     </div>
                 </div>
-                <div className="row align-items-center justify-content-between gap-5 gap-lg-0">
+                <div className="row align-items-center justify-content-center justify-content-lg-between gap-5 gap-lg-0">
                     <div className="col-md-10 col-lg-6 position-relative">
                         <AnimatedSection
                             zoom="in"

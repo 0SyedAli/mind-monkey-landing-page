@@ -9,7 +9,7 @@ import AnimatedSection from "../AnimatedSection";
 const HeroSection = () => {
   return (
     <>
-      <section className="hero-section">
+      <section className="hero-section mt-5">
         {/* <Image src="/images/shadow_box.png" className="boxShadow" width={698} height={698} alt="hr1" /> */}
         <div className="container position-relative">
           <Image src="/images/Star_theme.png" className="Star_theme10" width={48} height={48} alt="hr1" />
@@ -30,9 +30,9 @@ const HeroSection = () => {
                 delay={0.2}
               >
                 <div className="boxShadow"></div>
-                <Image src="/images/Star_theme.png" className="Star_theme11" width={45} height={45} alt="hr1" />
                 <Image src="/images/hr1_right.png" className="hr1_right" width={698} height={698} alt="hr1" />
               </AnimatedSection>
+              <Image src="/images/Star_theme.png" className="Star_theme11" width={45} height={45} alt="hr1" />
             </div>
           </div>
         </div>

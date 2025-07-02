@@ -1,13 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MdEmail } from "react-icons/md";
-import { FaPhone } from "react-icons/fa6";
 import AnimatedSection from "./AnimatedSection";
 
 const Footer = () => {
   return (
-
-    // <h1>Footer</h1>
     <footer>
       <div className="container">
         <div className="row pb-5 row-gap-4 gap-lg-0">
@@ -57,7 +53,6 @@ const Footer = () => {
                 </li>
               </ul>
             </AnimatedSection>
-
           </div>
           <div className="col-md-6 col-lg-2">
             <AnimatedSection
@@ -91,7 +86,6 @@ const Footer = () => {
           <div className="col-md-6 col-lg-4">
             <AnimatedSection
               direction="right"
-              
               delay={0.2}
             >
               <h2>Newsletter</h2>

@@ -2,7 +2,7 @@ import React from 'react'
 
 const SpinnerLoading = ({borderWidth}) => {
     return (
-        <div className={`spinner-border ${borderWidth}`} role="status">
+        <div className={`my-spinner-border ${borderWidth}`} role="status">
             <span className="visually-hidden">Loading...</span>
         </div>
     )
