@@ -77,8 +77,8 @@ const Footer = () => {
             >
               <h2>legal</h2>
               <ul>
-                <li><Link href="#!">terms of use</Link></li>
-                <li><Link href="#!">privacy policy</Link></li>
+                <li><Link href="term-of-use">terms of use</Link></li>
+                <li><Link href="privacy-policy">privacy policy</Link></li>
                 <li><Link href="#!">cookie policy</Link></li>
               </ul>
             </AnimatedSection>

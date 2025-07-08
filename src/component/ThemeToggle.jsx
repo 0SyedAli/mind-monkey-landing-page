@@ -13,9 +13,9 @@ export default function ThemeToggle() {
       className={`custom-button ${theme}`}
     >
       {theme === 'light' ? (
-        <IoMoonOutline className="h-5 w-5 text-gray-800" />
+        <IoMoonOutline  />
       ) : (
-        <IoSunnyOutline className="h-5 w-5 text-yellow-300" />
+        <IoSunnyOutline  />
       )}
     </button>
   )

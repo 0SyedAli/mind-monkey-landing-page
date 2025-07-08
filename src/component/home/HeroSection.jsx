@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Header from "../Header";
 import { HiArrowLongRight } from "react-icons/hi2";
 import Image from "next/image";
 import AnimatedSection from "../AnimatedSection";

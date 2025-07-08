@@ -80,7 +80,7 @@ const Header = () => {
                 Download
               </button>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" style={{ alignSelf: "center" }}>
               <ThemeToggle />
             </li>
           </ul>

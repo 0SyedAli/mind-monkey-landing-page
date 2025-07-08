@@ -65,7 +65,7 @@ export default function RootLayout({ children }) {
       className={`${archivo.variable} ${outfit.variable} ${poppins.variable} ${inter.variable}`}
     >
       <body suppressHydrationWarning={true}>
-        <NextTopLoader showSpinner={false} color="#293693" speed={500} height={2} />
+        <NextTopLoader showSpinner={false} color="#F48A88" speed={500} height={2} />
         <SmoothScrollProvider>
           <ThemeProvider>
             <div id="smooth-wrapper">
