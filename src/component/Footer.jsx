@@ -69,14 +69,13 @@ const Footer = () => {
               </ul>
             </AnimatedSection>
           </div>
-          <div className="col-md-6 col-lg-2">
+          <div className="col-md-6 col-lg-2 position-relative">
             <AnimatedSection
               direction="top"
               zoom="in"
               delay={0.2}
             >
-              <h2>legal</h2>
-              <ul>
+              <ul className="footer-legal">
                 <li><Link href="term-of-use">terms of use</Link></li>
                 <li><Link href="privacy-policy">privacy policy</Link></li>
                 <li><Link href="#!">cookie policy</Link></li>
