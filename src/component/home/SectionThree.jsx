@@ -19,10 +19,11 @@ const SectionThree = () => {
                 delay={0.2}
               >
                 <h5>advatnages</h5>
-                <h2>why choose <br />
+                <h2 className="text-uppercase">why choose <br />
                   Mind Monkey?</h2>
-                <h3><span><PiBellSimple /></span> clever notifications</h3>
-                <p>Arcu at dictum sapien, mollis. Vulputate sit id accumsan, ultricies. In ultrices malesuada elit mauris etiam odio. Duis tristique lacus, et blandit viverra nisl velit. Sed mattis rhoncus, diam suspendisse sit nunc, gravida eu. Lectus eget eget ac dolor neque lorem sapien, suspendisse aliquam.</p>
+                {/* <h3><span><PiBellSimple /></span> clever notifications</h3> */}
+                <p>Clever Notifications; “Mind Monkey sets daily reminders that will notify you when it’s time to record your days events, moments and mood. It serves as a friendly reminder to preserve yourself and commit to self care</p>
+                <p>FULLY CUSTOMIZABLE “Optimize your experience and claim your independence with our customizable theme and color templates! Keep your most prized and intimate truths safe with the Mind Monkey guide to continued success!</p>
               </AnimatedSection>
             </div>
             <div className="col-lg-6 position-relative">

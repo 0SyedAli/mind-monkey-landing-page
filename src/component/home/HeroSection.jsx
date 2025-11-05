@@ -18,8 +18,8 @@ const HeroSection = () => {
                 direction="left"
                 delay={0.2}
               >
-                <h1>Welcome To <span>Mind Monkey</span> Track Your Daily Moods</h1>
-                <p>Cum et convallis risus placerat aliquam, nunc. Scelerisque aliquet faucibus tincidunt eu adipiscing sociis arcu lorem porttitor.</p>
+                <h1 className="text-uppercase">Welcome To <span>Mind Monkey</span> - Track Your Daily Moods</h1>
+                <p>Begin your health and success story now with a fun & helpful pocket guide to mental and spiritual health!!</p>
                 <button className="btn btn-theme2">get started <span><HiArrowLongRight /></span></button>
               </AnimatedSection>
             </div>

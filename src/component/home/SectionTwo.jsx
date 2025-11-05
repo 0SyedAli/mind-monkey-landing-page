@@ -28,14 +28,17 @@ const SectionTwo = () => {
                 direction="right"
                 delay={0.2}
               >
-                <h5>features</h5>
-                <h2>Lorem Ipsum</h2>
-                <h4><Image src="/images/star.png" width={20} height={20} alt="icon" />Lorem Ipsum Dummy</h4>
-                <p>Cum et convallis risus placerat aliquam, nunc. Scelerisque aliquet faucibus tincidunt eu adipiscing sociis arcu lorem porttitor.</p>
-                <h4><Image src="/images/star2.png" width={20} height={20} alt="icon" />Lorem Ipsum Dummy</h4>
-                <p>Cum et convallis risus placerat aliquam, nunc. Scelerisque aliquet faucibus tincidunt eu adipiscing sociis arcu lorem porttitor.</p>
-                <h4><Image src="/images/cube.png" width={20} height={20} alt="icon" />Lorem Ipsum Dummy</h4>
-                <p>Cum et convallis risus placerat aliquam, nunc. Scelerisque aliquet faucibus tincidunt eu adipiscing sociis arcu lorem porttitor.</p>
+                <h5 className="text-uppercase">features</h5>
+                {/* <h2>Lorem Ipsum</h2> */}
+                
+                <p>Daily notes and mood recording. Track your emotions and health over time with easy entries and reminders for self care</p>
+                
+                <p>Track Synchronicities; Stay attuned to your relationship with nature with our synchronicity/”Moment” option! Warm, loving reminders of your greater purpose!</p>
+                {/* <h4><Image src="/images/cube.png" width={20} height={20} alt="icon" />Lorem Ipsum Dummy</h4> */}
+                <h4 className="text-text-uppercase"><Image src="/images/star.png" width={20} height={20} alt="icon" />GAIN VALUABLE INSIGHTS</h4>
+                <p>Into your events, schedule and monthly trends. Contrast and compare times for use in your self enhancement path</p>
+                <h4 className="text-text-uppercase"><Image src="/images/star2.png" width={20} height={20} alt="icon" />STAY MOTIVATED</h4>
+                 <p>And cultivate independence as you learn from experiences shared with Mind Monkey, further fueling and motivating you (and others) towards positive change.</p>
               </AnimatedSection>
             </div>
           </div>
